@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+   <body>
+       {{ text }}
+
+      <form action='/' method='post'>
+         <script src='https://static-content-qas.vnforapps.com/v2/js/checkout.js?qa=true'
+         data-sessiontoken='{{ text }}'
+         data-channel='web'
+         data-merchantid='456879852'
+        
+         data-merchantlogo= 'https://www.manualweb.net/img/logos/html.png'
+         data-formbuttoncolor='#D80000'
+         data-purchasenumber='123'
+         data-amount='20'
+         data-expirationminutes='5'
+         data-timeouturl = 'timeout.html'
+         ></script>
+        </form>
+
+      <table border = 1>
+         <thead>
+            <td>id</td>
+            <td>producto</td>
+            <td>precio</td>
+            <td>precio_dolares</td>
+            <td>medida</td>
+            <td>stock</td>
+            <td>imagen</td>
+            <td>descripcion</td>
+            <td>categoria}</td>
+         </thead>
+         
+         {% for row in rows %}
+            <tr>
+               <td>{{row["id"]}}</td>
+               <td>{{row["producto"]}}</td>
+               <td>{{row["precio"]}}</td>
+               <td>{{row["precio_dolares"]}}</td>
+               <td>{{row["medida"]}}</td>
+               <td>{{row["stock"]}}</td>
+               <td>{{row["imagen"]}}</td>
+
+               
+
+               <td>{{row["descripcion"]}}</td>
+               <td>{{row["categoria"]}}</td>
+
+            </tr>
+         {% endfor %}
+      </table>
+      
+      <a href = "/">Go back to home page</a>
+   </body>
+</html>
